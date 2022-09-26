@@ -1,3 +1,4 @@
 # Fizbot-IOS-CommonViews
 
-A description of this package.
+This repository contains common components, extensions, helpers and views which belongs to fizbot ios project
+
