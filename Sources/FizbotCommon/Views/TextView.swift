@@ -7,7 +7,6 @@
 import SwiftUI
 
 public struct TextView: View {
-    
     private var text: String = ""
     private var font: Font = .title
     private var color: Color = .darkBlue
@@ -19,7 +18,7 @@ public struct TextView: View {
     }
     
     public var body: some View {
-        Text(text)
+        Text(text.localized)
             .font(font)
             .foregroundColor(color)
     }
