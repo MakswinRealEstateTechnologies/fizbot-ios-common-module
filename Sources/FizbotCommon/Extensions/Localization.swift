@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Localization.swift
 //  
 //
 //  Created by Alkın Çakıralar on 26.09.2022.
