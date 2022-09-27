@@ -45,7 +45,7 @@ public struct EmptyListView: View {
     var pageType: EmptyListViewType
     var hideImage: Bool = false
     
-    public init(pageType: EmptyListViewType, hideImage: Bool) {
+    public init(pageType: EmptyListViewType, hideImage: Bool = false) {
         self.pageType = pageType
         self.hideImage = hideImage
     }
