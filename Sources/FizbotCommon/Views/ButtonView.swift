@@ -23,14 +23,14 @@ public struct ButtonView: View {
          isLoading: Binding<Bool> = .constant(false),
          font: Font,
          height: CGFloat = 48.0,
-         positiveButtonBackground: Color,
+        positiveButtonBackground: Color? = nil,
          onClick: @escaping () -> Void) {
         self.title = title
         self.type = type
         _isLoading = isLoading
         self.font = font
         self.height = height
-        self.positiveButtonBackground = positiveButtonBackground
+        self.positiveButtonBackground = positiveButtonBackground ?? .darkBlue
         self.onClick = onClick
     }
     
