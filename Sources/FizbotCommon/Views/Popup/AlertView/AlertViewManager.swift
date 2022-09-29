@@ -73,10 +73,10 @@ public class AlertViewManager : ObservableObject {
     }
     
     public func dismissAlert(onDismissed: @escaping () -> Void) {
-        withAnimation(.easeInOut(duration: 0.2)) {
+        withAnimation {
             state = false
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
             onDismissed()
         })
     }

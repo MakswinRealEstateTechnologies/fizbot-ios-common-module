@@ -28,6 +28,10 @@ public struct AlertViewConfiguration {
         self.buttons = buttons
     }
     
+    public init(type: AlertViewType) {
+        self.type = type
+    }
+    
     public init() {
         
     }
