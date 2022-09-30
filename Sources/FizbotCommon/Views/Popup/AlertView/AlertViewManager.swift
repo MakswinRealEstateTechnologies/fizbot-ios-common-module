@@ -67,7 +67,7 @@ public class AlertViewManager : ObservableObject {
     }
     
     private func presentAlert() {
-        withAnimation(.spring()) {
+        withAnimation(.spring().delay(0.1)) {
             state = true
         }
     }
@@ -76,7 +76,7 @@ public class AlertViewManager : ObservableObject {
         withAnimation {
             state = false
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             onDismissed()
         })
     }
