@@ -76,7 +76,7 @@ public class AlertViewManager : ObservableObject {
         withAnimation {
             state = false
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
             onDismissed()
         })
     }
