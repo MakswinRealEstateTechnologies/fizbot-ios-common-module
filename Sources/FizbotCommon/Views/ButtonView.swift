@@ -12,7 +12,7 @@ public struct ButtonView: View {
 
     var title: String = ""
     var type: ButtonViewType = .Positive
-    @Binding var isLoading: Bool
+    var isLoading: Bool
     var font: Font = .F17SB
     var height: CGFloat = 48.0
     var onClick: () -> Void
@@ -20,14 +20,14 @@ public struct ButtonView: View {
     
     public init(title: String,
          type: ButtonViewType,
-         isLoading: Binding<Bool> = .constant(false),
+         isLoading: Bool = false,
          font: Font? = nil,
          height: CGFloat = 48.0,
-        positiveButtonBackground: Color? = nil,
+         positiveButtonBackground: Color? = nil,
          onClick: @escaping () -> Void) {
         self.title = title
         self.type = type
-        _isLoading = isLoading
+        self.isLoading = isLoading
         self.font = font ?? .F17SB
         self.height = height
         self.positiveButtonBackground = positiveButtonBackground ?? .darkBlue
