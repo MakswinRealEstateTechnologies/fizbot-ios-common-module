@@ -7,20 +7,24 @@
 
 import SwiftUI
 
-public struct LoadingViewModifier: ViewModifier {
+struct LoadingViewModifier: ViewModifier {
+        
+    let isPresenting: Bool
     
-    @ObservedObject var loadingViewManager: LoadingViewManager
+    init(isPresenting: Bool) {
+        self.isPresenting = isPresenting
+    }
     
-    public func body(content: Content) -> some View {
+    func body(content: Content) -> some View {
         content.overlay(
-            LoadingView().opacity(Double(loadingViewManager.alpha))
+            LoadingView(isPresenting: isPresenting)
         )
     }
     
 }
 
 extension View {
-    public func loading(with loadingViewManager: LoadingViewManager) -> some View {
-        self.modifier(LoadingViewModifier(loadingViewManager: loadingViewManager))
+    public func loading(isPresenting: Bool) -> some View {
+        self.modifier(LoadingViewModifier(isPresenting: isPresenting))
     }
 }

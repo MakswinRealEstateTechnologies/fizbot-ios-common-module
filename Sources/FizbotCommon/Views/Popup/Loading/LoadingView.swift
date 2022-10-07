@@ -7,21 +7,23 @@
 
 import SwiftUI
 
-public struct LoadingView: View {
-    public var body: some View {
+struct LoadingView: View {
+    let isPresenting: Bool
+    
+    init(isPresenting: Bool) {
+        self.isPresenting = isPresenting
+    }
+    
+    var body: some View {
         ZStack {
             Color.white
-                .opacity(0.6)
+                .opacity(0.8)
             LottieView(
                 name: "loading_animation",
                 loopMode: .loop
             ).frame(width: 175, height: 175)
         }.ignoresSafeArea()
-    }
-}
-
-struct LoadingView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoadingView()
+            .opacity(isPresenting ? 1.0 : 0.0)
+            .animation(Animation.easeInOut(duration: 0.3), value: isPresenting)
     }
 }
