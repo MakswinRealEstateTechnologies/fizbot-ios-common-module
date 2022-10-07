@@ -17,7 +17,13 @@ struct LoadingViewModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content.overlay(
-            LoadingView(isPresenting: isPresenting)
+            EmptyView()
+                .fullScreenCover(isPresented: .constant(isPresenting), content: {
+                    LoadingView(isPresenting: isPresenting)
+                })
+                .transaction({ transaction in
+                    transaction.disablesAnimations = true
+                })
         )
     }
     
