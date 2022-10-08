@@ -13,6 +13,7 @@ public struct MultiLineTextInputView: View {
     @Binding var text: String
     var font: Font
     var color: Color
+    @State private var isFocused = false
 
     public init(placeholder: String, text: Binding<String> = .constant(""), font: Font, color: Color) {
         self.placeholder = placeholder
@@ -23,14 +24,21 @@ public struct MultiLineTextInputView: View {
 
     public var body: some View {
         ZStack(alignment: .topLeading) {
-            if self.text.isBlank {
+            if !self.isFocused {
                 TextView(text: placeholder, font: font, color: color)
             }
             TextEditor(text: $text)
                 .font(font)
                 .foregroundColor(color)
                 .opacity(self.text.isBlank ? 0.50 : 1)
+                .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
+                    isFocused = true
+                }
+                .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
+                    isFocused = false
+                }
         }
+        .padding(22)
     }
 }
 
