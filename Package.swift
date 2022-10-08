@@ -15,13 +15,17 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/airbnb/lottie-ios.git", .upToNextMinor(from: "3.4.3")),
+        .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", from: "2.2.1"),
     ],
     targets: [
         .target(
             name: "FizbotCommon",
             dependencies: [
                 .product(name: "Lottie",
-                         package: "lottie-ios")],
+                         package: "lottie-ios"),
+                .product(name: "SDWebImageSwiftUI",
+                         package: "SDWebImageSwiftUI"),
+            ],
             path: "Sources/FizbotCommon"
         )
     ]
