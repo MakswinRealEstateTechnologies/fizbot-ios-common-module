@@ -24,8 +24,8 @@ public struct PopupView<Content: View>: View {
             Spacer()
             VStack {
                 Capsule()
-                    .frame(width: 40, height: 6)
-                    .foregroundColor(Color.gray)
+                    .frame(width: 40, height: 4)
+                    .foregroundColor(Color.coolGray4)
                 .frame(height: 20)
                 .frame(maxWidth: .infinity)
                 .background(Color.white.opacity(0.00001))
