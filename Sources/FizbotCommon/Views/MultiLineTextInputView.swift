@@ -38,7 +38,6 @@ public struct MultiLineTextInputView: View {
                     isFocused = false
                 }
         }
-        .padding(22)
     }
 }
 
