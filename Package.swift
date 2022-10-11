@@ -16,6 +16,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/airbnb/lottie-ios.git", .upToNextMinor(from: "3.4.3")),
         .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", from: "2.2.1"),
+        .package(url: "https://github.com/marmelroy/PhoneNumberKit.git", from: "3.4.10"),
     ],
     targets: [
         .target(
@@ -25,6 +26,8 @@ let package = Package(
                          package: "lottie-ios"),
                 .product(name: "SDWebImageSwiftUI",
                          package: "SDWebImageSwiftUI"),
+                .product(name: "PhoneNumberKit",
+                         package: "PhoneNumberKit")
             ],
             path: "Sources/FizbotCommon"
         )
